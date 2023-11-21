@@ -23,11 +23,11 @@ class DataTransformation:
 
     def get_preprocessor_object(self):
         try:
-            # numerical_features = ['age', 'bmi', 'children', 'charges']
-            # categorical_features = ['sex', 'smoker', 'region']
+            numerical_features = ['age', 'bmi', 'children', 'charges']
+            categorical_features = ['sex', 'smoker', 'region']
 
-            numerical_features = ['children']
-            categorical_features = ['age_range', 'bmi_range', 'sex', 'smoker', 'region']
+            # numerical_features = ['children']
+            # categorical_features = ['age_range', 'bmi_range', 'sex', 'smoker', 'region']
 
             num_pipeline = Pipeline(
                 steps = [
