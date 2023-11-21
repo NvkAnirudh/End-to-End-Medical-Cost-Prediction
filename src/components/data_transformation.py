@@ -23,11 +23,8 @@ class DataTransformation:
 
     def get_preprocessor_object(self):
         try:
-            numerical_features = ['age', 'bmi', 'children', 'charges']
+            numerical_features = ['age', 'bmi', 'children']
             categorical_features = ['sex', 'smoker', 'region']
-
-            # numerical_features = ['children']
-            # categorical_features = ['age_range', 'bmi_range', 'sex', 'smoker', 'region']
 
             num_pipeline = Pipeline(
                 steps = [
@@ -60,10 +57,10 @@ class DataTransformation:
         except Exception as e:
             raise CustomException(e,sys)
         
-    def initiate_data_transformation(self, train_path, test_path):
+    def initiate_data_transformation(self, train_path, valid_path):
         try:
             train_df = pd.read_csv(train_path)
-            test_df = pd.read_csv(test_path)
+            valid_df = pd.read_csv(valid_path)
 
             logging.info("Loaded train and test dataset")
             logging.info("Obtaining preprocessor object")
@@ -75,8 +72,8 @@ class DataTransformation:
             input_features_train = train_df.drop(columns=[target_column_name], axis=1)
             target_feature_train = train_df[target_column_name]
 
-            input_features_test = test_df.drop(columns=[target_column_name], axis=1)
-            target_feature_test = test_df[target_column_name]
+            input_features_test = valid_df.drop(columns=[target_column_name], axis=1)
+            target_feature_test = valid_df[target_column_name]
 
             logging.info("Applying preprocessor object on training and testing dataframe")
 

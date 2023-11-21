@@ -32,9 +32,11 @@ def load_object(file_path):
     except Exception as e:
         raise CustomException(e, sys)
     
-def evaluate_model(X_train, y_train, X_test, y_test, models, params):
+def evaluate_model(X_train, y_train, X_valid, y_valid, models, params):
     try:
         report = {}
+        print("Training Shape:", X_train.shape)
+        print("Validation Shape:", X_valid.shape)
 
         for i in range(len(models)):
             model = list(models.values())[i]
@@ -47,10 +49,10 @@ def evaluate_model(X_train, y_train, X_test, y_test, models, params):
             model.fit(X_train, y_train)
 
             y_train_pred = model.predict(X_train)
-            y_test_pred = model.predict(X_test)
+            y_test_pred = model.predict(X_valid)
 
             model_train_score = r2_score(y_train, y_train_pred)
-            model_test_score = r2_score(y_test, y_test_pred)
+            model_test_score = r2_score(y_valid, y_test_pred)
 
             report[list(models.keys())[i]] = model_test_score
 

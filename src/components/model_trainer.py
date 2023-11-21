@@ -22,14 +22,14 @@ class Trainer:
     def __init__(self):
         self.trainer_config = TrainerConfig()
 
-    def initiate_model_trainer(self, train_arr, test_arr):
+    def initiate_model_trainer(self, train_arr, valid_arr):
         try:
             logging.info("Splitting trainig and test input data")
-            X_train, y_train, X_test, y_test = (
+            X_train, y_train, X_valid, y_valid = (
                 train_arr[:,:-1],
                 train_arr[:,-1],
-                test_arr[:,:-1],
-                test_arr[:,-1]
+                valid_arr[:,:-1],
+                valid_arr[:,-1]
             )
 
             models = {
@@ -74,7 +74,7 @@ class Trainer:
                 
             }
 
-            model_report = evaluate_model(X_train, y_train, X_test, y_test, models, params)
+            model_report = evaluate_model(X_train, y_train, X_valid, y_valid, models, params)
             print(model_report)
 
             max_ = max(zip(model_report.values(), model_report.keys()))
