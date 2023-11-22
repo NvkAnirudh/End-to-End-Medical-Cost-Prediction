@@ -75,3 +75,12 @@ And, that's it, the application should run perfectly locally, and you can test t
     - ``AWS_ECR_LOGIN_URI``: ECR repository's login URI
       
     - ``ECR_REPOSITORY_NAME``: Name of the ECR repository created
+
+## Authors   
+- Anirudh Nuti - *Initial Work* - [NVK Anirudh](https://github.com/NvkAnirudh)
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+## Acknowledgements
+Thanks to [Krish Naik](https://github.com/krishnaik06) for his informational videos
