@@ -8,5 +8,5 @@ xgboost
 dill
 Flask
 # -e .
-# -e . is used to automatically run setup.py (which created an application as a package). Comment it out after the first run of pip install -r requirements.txt because the whole setup.py will run each time 
+# -e . is used to automatically run setup.py (which creats an application as a package). Comment it out after the first run of pip install -r requirements.txt because the whole setup.py will run each time 
 # you use requirements.txt
