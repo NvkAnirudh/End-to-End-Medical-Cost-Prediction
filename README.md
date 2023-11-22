@@ -80,7 +80,7 @@ And, that's it, the application should run perfectly locally, and you can test t
 - Anirudh Nuti - *Initial Work* - [NVK Anirudh](https://github.com/NvkAnirudh)
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/NvkAnirudh/Medical_Cost_Prediction/blob/main/LICENSE) file for details
 
 ## Acknowledgements
 Thanks to [Krish Naik](https://github.com/krishnaik06) for his informational videos
